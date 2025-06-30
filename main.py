@@ -24,9 +24,6 @@ if st.button("Predict"):
             label = "Phishing" if prediction == 1 else "Benign"
 
             st.success(f"Prediction: **{label}**")
-            st.subheader("Extracted Features:")
-            for i, feat in enumerate(features[1:-1]):
-                st.text(f"Feature {i+1}: {feat}")
         else:
             st.error("Failed to extract features. Check the URL.")
     else:
