@@ -7,3 +7,4 @@ xgboost
 levenshtein
 python-whois
 dnspython
+beautifulsoup
