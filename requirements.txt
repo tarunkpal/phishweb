@@ -4,3 +4,6 @@ joblib
 requests
 tldextract
 xgboost
+levenshtein
+python-whois
+dnspython
