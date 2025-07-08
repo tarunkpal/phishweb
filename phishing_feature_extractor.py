@@ -344,7 +344,7 @@ class PhishingFeatureExtractor:
         # DNS Record
         try:
             import dns.resolver
-            dns.resolver.query(domain, 'NS')
+            dns.resolver.resolve(domain, 'NS')
             features['dns_record'] = 0
         except Exception:
             features['dns_record'] = 1
