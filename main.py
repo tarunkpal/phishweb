@@ -13,6 +13,7 @@ url = st.text_input("Enter a URL:", "http://example.com")
 if st.button("Predict"):
     if url:
         features = extractor.extract_features(url)
+        features = list(features.values())  # Get the feature values, excluding URL and label
 
         if features:
             # Reshape the feature vector (remove URL and label if present)
