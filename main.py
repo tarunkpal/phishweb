@@ -14,6 +14,8 @@ if st.button("Predict"):
     if url:
         features = extractor.extract_features(url)
         features.pop('web_traffic',None)
+        fd.pop('analysis_status',None)
+        fd.pop('url',None)
         features = list(features.values())  # Get the feature values, excluding URL and label
 
         if features:
