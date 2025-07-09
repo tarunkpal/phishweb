@@ -21,7 +21,7 @@ if st.button("Predict"):
         if features:
             # Reshape the feature vector (remove URL and label if present)
             # Assuming features[1:-1] are the real numeric features
-            input_vector = [features[1:-1]]  # Must be 2D for sklearn
+            input_vector = [features]  # Must be 2D for sklearn
 
             prediction = model.predict(input_vector)[0]
             label = "Phishing" if prediction == 1 else "Benign"
