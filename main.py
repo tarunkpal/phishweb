@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 from phishing_feature_extractor import PhishingFeatureExtractor
 # Load the model
-model = joblib.load('model.pkl')
+model = joblib.load('model')
 extractor = PhishingFeatureExtractor()
 st.title("Phishing URL Detection")
 st.markdown("Enter a URL below to detect whether it's **phishing** or **benign**.")
