@@ -15,6 +15,11 @@ EMBED_DIM = 16
 URL_VOCAB_SIZE = 76
 HTML_VOCAB_SIZE = 321010
 
+import os
+if not os.path.exists("html_tokenizer.pkl"):
+    os.system("python merge_tokenizer.py")
+
+
 # Load URL char index
 with open("url_char_to_index.json", "r") as f:
     url_char_to_index = json.load(f)
