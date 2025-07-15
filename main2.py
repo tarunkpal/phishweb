@@ -16,16 +16,26 @@ URL_VOCAB_SIZE = 76
 HTML_VOCAB_SIZE = 321010
 
 import os
-if not os.path.exists("html_tokenizer.pkl"):
-    os.system("python merge_tokenizer.py")
-
-
+def merge_parts(base_filename, output_file):
+    part_num = 0
+    with open(output_file, 'wb') as outfile:
+        while True:
+            part_file = f"{base_filename}.part{part_num:03d}"
+            if not os.path.exists(part_file):
+                break
+            with open(part_file, 'rb') as pf:
+                outfile.write(pf.read())
+            print(f"Merged: {part_file}")
+            part_num += 1
+            
 # Load URL char index
 with open("url_char_to_index.json", "r") as f:
     url_char_to_index = json.load(f)
 
 # Load HTML tokenizer
 with open("html_tokenizer.pkl", "rb") as f:
+    if not os.path.exists("html_tokenizer.pkl"):
+        merge_parts("html_tokenizer.pkl", "html_tokenizer.pkl")
     html_tokenizer = pickle.load(f)
 
 # Build model
