@@ -2,7 +2,6 @@ streamlit
 scikit-learn
 requests
 beautifulsoup4
-python-dotenv
 tensorflow
 numpy
 pandas
