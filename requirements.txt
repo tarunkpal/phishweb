@@ -1,12 +1,6 @@
 streamlit
 scikit-learn
-joblib
 requests
-tldextract
-xgboost
-levenshtein
-python-whois
-dnspython
 beautifulsoup4
 python-dotenv
 tensorflow
