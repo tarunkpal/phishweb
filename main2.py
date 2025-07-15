@@ -4,6 +4,8 @@ import re
 import json
 import pickle
 import numpy as np
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Embedding, Concatenate, Conv1D, MaxPooling1D, Flatten, Dense
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -15,7 +17,6 @@ EMBED_DIM = 16
 URL_VOCAB_SIZE = 76
 HTML_VOCAB_SIZE = 321010
 
-import os
 def merge_parts(base_filename, output_file):
     part_num = 0
     with open(output_file, 'wb') as outfile:
