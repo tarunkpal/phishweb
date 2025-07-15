@@ -9,7 +9,7 @@ python-whois
 dnspython
 beautifulsoup4
 python-dotenv
-tensorflow==2.15.0
-numpy==1.24.3
-pandas==1.5.3
+tensorflow
+numpy
+pandas
 
