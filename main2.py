@@ -33,9 +33,9 @@ with open("url_char_to_index.json", "r") as f:
     url_char_to_index = json.load(f)
 
 # Load HTML tokenizer
-with open("html_tokenizer.pkl", "rb") as f:
-    if not os.path.exists("html_tokenizer.pkl"):
+if not os.path.exists("html_tokenizer.pkl"):
         merge_parts("html_tokenizer.pkl", "html_tokenizer.pkl")
+with open("html_tokenizer.pkl", "rb") as f:
     html_tokenizer = pickle.load(f)
 
 # Build model
